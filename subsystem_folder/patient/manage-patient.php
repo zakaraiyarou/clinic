@@ -307,72 +307,7 @@
 <body>
 <main id="main" class="main">
 
-
-    <table id="patientTable">
-
-    <div class="col-12">
-              <div class="card recent-sales overflow-auto">
-
-                <div class="card-body">
-                  <h5 class="card-title">List of Patients</h5>
-
-                  <table id="patientTable" class="table table-borderless datatable">
-                    <thead>
-                      <tr>
-                          <th scope="col">Patient ID</th>
-                          <th scope="col">Name</th>
-                          <th scope="col">Gender</th>
-                          <th scope="col">Age</th>
-                          <th scope="col">Paient Type</th>
-                          <th scope="col">Address</th>
-                          <th scope="col">Contact</th>
-                          <th scope="col">Action</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <?php $query = "SELECT * FROM patient_lists";
-                                  $query_run = mysqli_query($con, $query);
-
-                                  if (mysqli_num_rows($query_run) > 0)
-                                  {
-                                      foreach($query_run as $patient)
-                                      {
-                                          ?>
-                                          <tr>
-                                              <td><?= $patient['patient_id']; ?></td>
-                                              <td><?= $patient['name'] ?> </td>
-                                              <td><?= $patient['gender']; ?></td>
-                                              <td><?= $patient['age']; ?></td>
-                                              <td><?= $patient['patient_type']; ?></td>
-                                              <td><?= $patient['address']; ?></td>
-                                              <td><?= $patient['contact']; ?></td>
-                                              <td>
-                                                  <a href="view-patient.php?view=<?=$patient['patient_id'];?>" type="button" class="btn btn-info">
-                                                    View
-                                                  </a>
-                                                  <a href="manage-patient.php?manage=<?=$patient['patient_id'];?>" type="button" class="btn btn-primary">
-                                                    Manage
-                                                  </a>
-                                              </td>
-                                          </tr>
-                                          <?php
-
-                                      }
-                                  }
-                                  else
-                                  {
-                                      echo "<h5>No Record Found!</h5>";
-                                  }
-                              ?>
-                    </tbody>
-                  </table>
-
-                </div>
-
-              </div>
-          </div>
-
-    </table>
+<h1>Pogi Ko</h1>
 </main>
 
 
