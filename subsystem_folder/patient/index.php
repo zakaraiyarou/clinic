@@ -49,7 +49,7 @@
 <header id="header" class="header fixed-top d-flex align-items-center">
 
   <div class="d-flex align-items-center justify-content-between">
-    <a href="../../subsystem_folder/index.php" class="logo d-flex align-items-center">
+    <a href="../dashboard.php" class="logo d-flex align-items-center">
       <img src="../../assets/img/logo.png" alt="">
       <span class="d-none d-lg-block">Clinic</span>
     </a>
@@ -261,42 +261,42 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
         <li class="nav-item">
-        <a class="nav-link collapsed" href="dashboard.php"  style="color:blue;">
+        <a class="nav-link collapsed" href="../dashboard.php">
             <i class="bi bi-grid"></i>
             <span>Dashboard</span>
         </a>
         </li><!-- End Dashboard Nav -->
 
         <li class="nav-item">
-        <a class="nav-link collapsed" href="patient-create.php">
+        <a class="nav-link collapsed" href="index.php"  style="color:blue;">
         <i class="bi bi-person"></i>
             <span>Patient</span>
         </a>
     </li>
 
         <li class="nav-item">
-        <a class="nav-link collapsed" href="../appointment.php">
+        <a class="nav-link collapsed" href="../appointment/appointment.php">
         <i class="fa-solid fa-calendar-check"></i>
             <span>Appointment Management</span>
         </a>
         </li>
 
         <li class="nav-item">
-        <a class="nav-link collapsed" href="medical.php ">
+        <a class="nav-link collapsed" href="../medical/medical.php ">
         <i class="fa-solid fa-notes-medical"></i>
             <span>Medical</span>
         </a>
         </li>
 
         <li class="nav-item">
-        <a class="nav-link collapsed" href="inventory.php">
+        <a class="nav-link collapsed" href="../inventory/inventory.php">
         <i class="fa-solid fa-warehouse"></i>
             <span>Inventory</span>
         </a>
         </li>
 
         <li class="nav-item">
-        <a class="nav-link collapsed" href="reports.php">
+        <a class="nav-link collapsed" href="../reports/reports.php">
         <i class="fa-sharp fa-regular fa-file-chart-column"></i>
             <span>Reports</span>
         </a>

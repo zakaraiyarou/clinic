@@ -9,25 +9,25 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="../assets/img/favicon.png" rel="icon">
-  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="../../assets/img/favicon.png" rel="icon">
+  <link href="../../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="../assets/vendor/fonta-6/css/all.css" rel="stylesheet">
-  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="../assets/vendor/quill/quill.snow.css" rel="stylesheet">
-  <link href="../assets/vendor/quill/quill.bubble.css" rel="stylesheet">
-  <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="../assets/vendor/simple-datatables/style.css" rel="stylesheet">
+  <link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../../assets/vendor/fonta-6/css/all.css" rel="stylesheet">
+  <link href="../../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../../assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="../../assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="../../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="../../assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="../assets/css/style.css" rel="stylesheet">
+  <link href="../../assets/css/style.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: NiceAdmin - v2.4.1
@@ -43,8 +43,8 @@
 <header id="header" class="header fixed-top d-flex align-items-center">
 
   <div class="d-flex align-items-center justify-content-between">
-    <a href="../subsystem_folder/index.php" class="logo d-flex align-items-center">
-      <img src="../assets/img/logo.png" alt="">
+    <a href="../dashboard.php" class="logo d-flex align-items-center">
+      <img src="../../assets/img/logo.png" alt="">
       <span class="d-none d-lg-block">Clinic</span>
     </a>
 
@@ -163,7 +163,7 @@
 
               <li class="message-item">
                 <a href="#">
-                  <img src="../../assets/img/messages-1.jpg" alt="" class="rounded-circle">
+                  <img src="../../../assets/img/messages-1.jpg" alt="" class="rounded-circle">
                   <div>
                     <h4>Maria Hudson</h4>
                     <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -177,7 +177,7 @@
 
               <li class="message-item">
                 <a href="#">
-                  <img src="../../assets/img/messages-2.jpg" alt="" class="rounded-circle">
+                  <img src="../../../assets/img/messages-2.jpg" alt="" class="rounded-circle">
                   <div>
                     <h4>Anna Nelson</h4>
                     <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -191,7 +191,7 @@
 
               <li class="message-item">
                 <a href="#">
-                  <img src="../../assets/img/messages-3.jpg" alt="" class="rounded-circle">
+                  <img src="../../../assets/img/messages-3.jpg" alt="" class="rounded-circle">
                   <div>
                     <h4>David Muldon</h4>
                     <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -214,7 +214,7 @@
           <li class="nav-item dropdown pe-3">
 
             <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-              <img src="../../assets/img/apple-touch-icon.png" alt="Profile" class="rounded-circle">
+              <img src="../../../assets/img/apple-touch-icon.png" alt="Profile" class="rounded-circle">
               <span class="d-none d-md-block dropdown-toggle ps-2">Admin</span>
             </a><!-- End Profile Iamge Icon -->
 
@@ -250,47 +250,47 @@
 
 
 </header>
- <!-- ======= Sidebar ======= -->
- <aside id="sidebar" class="sidebar">
+<!-- ======= Sidebar ======= -->
+<aside id="sidebar" class="sidebar">
     <ul class="sidebar-nav" id="sidebar-nav">
 
         <li class="nav-item">
-        <a class="nav-link collapsed" href="dashboard.php"  style="color:blue;">
+        <a class="nav-link collapsed" href="../dashboard.php">
             <i class="bi bi-grid"></i>
             <span>Dashboard</span>
         </a>
         </li><!-- End Dashboard Nav -->
 
         <li class="nav-item">
-        <a class="nav-link collapsed" href="patient-create.php">
+        <a class="nav-link collapsed" href="../patient/index.php">
         <i class="bi bi-person"></i>
             <span>Patient</span>
         </a>
     </li>
 
         <li class="nav-item">
-        <a class="nav-link collapsed" href="../appointment.php">
+        <a class="nav-link collapsed" href="../appointment/appointment.php">
         <i class="fa-solid fa-calendar-check"></i>
             <span>Appointment Management</span>
         </a>
         </li>
 
         <li class="nav-item">
-        <a class="nav-link collapsed" href="medical.php ">
+        <a class="nav-link collapsed" href="medical.php" style="color:blue;">
         <i class="fa-solid fa-notes-medical"></i>
             <span>Medical</span>
         </a>
         </li>
 
         <li class="nav-item">
-        <a class="nav-link collapsed" href="inventory.php">
+        <a class="nav-link collapsed" href="../inventory/inventory.php">
         <i class="fa-solid fa-warehouse"></i>
             <span>Inventory</span>
         </a>
         </li>
 
         <li class="nav-item">
-        <a class="nav-link collapsed" href="reports.php">
+        <a class="nav-link collapsed" href="../reports/reports.php">
         <i class="fa-sharp fa-regular fa-file-chart-column"></i>
             <span>Reports</span>
         </a>
@@ -307,26 +307,26 @@
 
 
 <!-- Vendor JS Files -->
-<script src="../assets/vendor/apexcharts/apexcharts.min.js"></script>
-<script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="../assets/vendor/chart.js/chart.min.js"></script>
-<script src="../assets/vendor/echarts/echarts.min.js"></script>
-<script src="../assets/vendor/quill/quill.min.js"></script>
-<script src="../assets/vendor/simple-datatables/simple-datatables.js"></script>
-<script src="../assets/vendor/tinymce/tinymce.min.js"></script>
-<script src="../assets/vendor/php-email-form/validate.js"></script>
+<script src="../../assets/vendor/apexcharts/apexcharts.min.js"></script>
+<script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../../assets/vendor/chart.js/chart.min.js"></script>
+<script src="../../assets/vendor/echarts/echarts.min.js"></script>
+<script src="../../assets/vendor/quill/quill.min.js"></script>
+<script src="../../assets/vendor/simple-datatables/simple-datatables.js"></script>
+<script src="../../assets/vendor/tinymce/tinymce.min.js"></script>
+<script src="../../assets/vendor/php-email-form/validate.js"></script>
 
   <!-- DATA TABLES -->
-<script src="../assets/vendor/dataTables/jquery-3.5.1.js"></script>
-<script src="../assets/vendor/dataTables/jquery.dataTables.min.js"></script>
-<script src="../assets/vendor/dataTables/dataTables.bootstrap5.min.js"></script>
+<script src="../../assets/vendor/dataTables/jquery-3.5.1.js"></script>
+<script src="../../assets/vendor/dataTables/jquery.dataTables.min.js"></script>
+<script src="../../assets/vendor/dataTables/dataTables.bootstrap5.min.js"></script>
 
   <!-- DATA TABLES -->
-  <script src="../assets/js/clinic.js"></script>
+  <script src="../../assets/js/clinic.js"></script>
 
 <!-- Template Main JS File -->
-<script src="../assets/js/main.js"></script>
-<script src="../assets/js/apexchart.js"></script>
+<script src="../../assets/js/main.js"></script>
+<script src="../../assets/js/apexchart.js"></script>
 
 
 </body>
