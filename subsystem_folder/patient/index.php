@@ -394,6 +394,10 @@
 <script src="../../assets/js/main.js"></script>
 <script src="../../assets/js/apexchart.js"></script>
 
+<!-- Sweet Alert -->
+<script src="../../assets/js/sweetalert.min.js"></script>
+
+
 <!-- SWEET ALERT -->
 <?php
     if(isset($_SESSION['status']) && $_SESSION['status'] !='' )

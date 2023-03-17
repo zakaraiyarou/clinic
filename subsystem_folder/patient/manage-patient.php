@@ -2,6 +2,11 @@
   session_start();
 
   require_once '../../database/connection.php';
+
+  if(isset($_GET['manage']))
+  {
+    $studentNumber = $_GET['manage'];
+  }
 ?>
 
 <!DOCTYPE html>
@@ -314,10 +319,13 @@
     <div class="card-body">
       <form action="../../includes/patient/insert-monitoring.php" class="pt-3" method="POST">
         <div class="d-flex gap-2">
+          <?php if($studentNumber): ?>
+          <input type="hidden" name="studentNumber" class="form-control" value="<?= $studentNumber ?>"></textarea>
+          <?php endif; ?>
           <div class="mb-3 col">
               <label for="col" class="form-label">Blood Pressure</label>
               <div class="">
-                <input type="text" name="" class="form-control"></textarea>
+                <input type="text" name="bloodPressure" class="form-control"></textarea>
               </div>
           </div>
           <div class="mb-3 col">
@@ -376,14 +384,17 @@
 <script src="../../assets/js/main.js"></script>
 <script src="../../assets/js/apexchart.js"></script>
 
+<!-- Sweet Alert -->
+<script src="../../assets/js/sweetalert.min.js"></script>
+
 <!-- SWEET ALERT -->
 <?php
-    if(isset($_SESSION['status']) && $_SESSION['status'] !='' )
+    if(isset($_SESSION['status']) && $_SESSION['status'] != '' )
     {
       ?>
       <script>swal({
         title: "<?php echo $_SESSION['status'];?>",
-        // text: "Patient registered successfully!",
+        text: "Patient registered successfully!",
         icon: "<?php echo $_SESSION['status_code']; ?>",
         button: "Done",
       });</script>
