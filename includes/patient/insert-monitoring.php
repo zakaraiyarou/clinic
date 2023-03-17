@@ -25,23 +25,34 @@ if(isset($_POST['submit']))
 
     //Check if inputs are empty
     if ($studentNumber && $bloodPressure && $heartRate && $temperature && $reason && $prescriptionAdvice) {
-         //Beginning the transaction
-         mysqli_begin_transaction($con);
- 
-         //Creating a table
-         $sql2 = "INSERT INTO patient_monitoring (student_id, blood_pressure, heart_rate, temperature, reason, prescription_advice) VALUES ('$studentNumber','$bloodPressure','$heartRate','$temperature','$reason','$prescriptionAdvice') ";
-         
-         mysqli_query($con, $sql2);
- 
-         //Committing the transaction
-         mysqli_commit($con);
- 
-         //Closing the connection
-         mysqli_close($con);
+        
+        try
+        {
+            //Beginning the transaction
+            mysqli_begin_transaction($con);
+    
+            //Creating a table
+            $sql2 = "INSERT INTO patient_monitoring (student_id, blood_pressure, heart_rate, temperature, reason, prescription_advice) VALUES ('$studentNumber','$bloodPressure','$heartRate','$temperature','$reason','$prescriptionAdvice') ";
+            
+            mysqli_query($con, $sql2);
+    
+            //Committing the transaction
+            mysqli_commit($con);
+    
+            //Closing the connection
+            mysqli_close($con);
+            
+            $_SESSION['status'] = "Monitoring created!";
+            $_SESSION['status_code'] = "success";
+            header("Location: ../../subsystem_folder/patient/index.php");
+            exit();
+        } catch(Exception $e)
+        {
+            $_SESSION['status'] = $e->getMessage();
+            $_SESSION['status_code'] = "error";
+            header("Location: ../../subsystem_folder/patient/index.php");
+            exit();
+        }
 
-        $_SESSION['status'] = "Monitoring created!";
-        $_SESSION['status_code'] = "success";
-        header("Location: ../../subsystem_folder/patient/index.php");
-        exit();
     }
 }
