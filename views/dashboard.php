@@ -211,9 +211,6 @@
 
   <!-- ======= Footer ======= -->
 
-              <?php include ('../partials/footer.php'); ?>
 
   <!-- End Footer -->
-
-
-</html>
+  <?php include_once('./layouts/footer.php'); ?>
