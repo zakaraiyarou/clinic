@@ -52,7 +52,7 @@ require_once 'database/connection.php';
     <div class="card-header">
         Online Appointment
     </div>
-    <div class="card-body">
+    <div class="card-body pt-3">
         <form action="includes/appointment.inc.php" method="POST">
         <div class="row mb-3">
             <p class="col-md-5">Student Number:</p>

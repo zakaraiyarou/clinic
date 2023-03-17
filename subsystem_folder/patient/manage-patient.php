@@ -273,14 +273,14 @@
         </li><!-- End Dashboard Nav -->
 
         <li class="nav-item">
-        <a class="nav-link collapsed" href="../patient/index.php">
+        <a class="nav-link collapsed" href="../patient/index.php" style="color:blue;">
         <i class="bi bi-person"></i>
             <span>Patient</span>
         </a>
     </li>
 
         <li class="nav-item">
-        <a class="nav-link collapsed" href="../appointment/appointment.php" style="color:blue;">
+        <a class="nav-link collapsed" href="../appointment/appointment.php" >
         <i class="fa-solid fa-calendar-check"></i>
             <span>Appointment Management</span>
         </a>

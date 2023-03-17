@@ -1,3 +1,9 @@
+<?php
+  session_start();
+
+  require_once '../../database/connection.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   
@@ -282,7 +288,7 @@
         </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link collapsed" href="../requisition/requisition.php">
+          <a class="nav-link collapsed" href="../requisition/requisition.php"  style="color:blue;">
             <i class="fa-solid fa-warehouse"></i>
             <span>Requisition</span>
           </a>
@@ -297,8 +303,79 @@
 
 </aside><!-- End Sidebar-->
 <body>
-<main>
+<main id="main" class="main">
+
     <table id="patientTable">
+
+    <div class="col-12">
+              <div class="card">
+
+                <div class="card-header d-flex justify-content-between">
+                  <h5 class="">List of requested supplies.</h5>
+                  <div>
+                    <a href="create-request.php">
+                        <button class="btn btn-primary">Create request</button>
+                    </a>
+                    </div>
+                </div>
+                <div class="card-body">
+
+                  <table id="patientTable" class="table table-borderless datatable">
+                    <thead>
+                      <tr>
+                          <th scope="col">Department</th>
+                          <th scope="col">Name</th>
+                          <th scope="col">Email</th>
+                          <th scope="col">Position</th>
+                          <th scope="col">Phone</th>
+                          <th scope="col">Purpose</th>
+                          <th scope="col">Asset Name</th>
+                          <th scope="col">Type</th>
+                          <th scope="col">Quantity</th>
+                          <th scope="col">Brand</th>
+                          <th scope="col">Date</th>
+                          <th scope="col">Shipping</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <?php $query = "SELECT * FROM prodian_apr_pen";
+                                  $query_run = mysqli_query($con, $query);
+
+                                  if (mysqli_num_rows($query_run) > 0)
+                                  {
+                                      foreach($query_run as $request)
+                                      {
+                                          ?>
+                                          <tr>
+                                              <td><?= $request['dept']; ?></td>
+                                              <td><?= $request['fname'].''.$request['lname'] ?> </td>
+                                              <td><?= $request['email']; ?></td>
+                                              <td><?= $request['position']; ?></td>
+                                              <td><?= $request['phone']; ?></td>
+                                              <td><?= $request['purpose']; ?></td>
+                                              <td><?= $request['a_name']; ?></td>
+                                              <td><?= $request['type']; ?></td>
+                                              <td><?= $request['a_qty']; ?></td>
+                                              <td><?= $request['brand']; ?></td>
+                                              <td><?= $request['date']; ?></td>
+                                              <td><?= $request['shipping']; ?></td>
+                                          </tr>
+                                          <?php
+
+                                      }
+                                  }
+                                  else
+                                  {
+                                      echo "<h5>No Record Found!</h5>";
+                                  }
+                              ?>
+                    </tbody>
+                  </table>
+
+                </div>
+
+              </div>
+          </div>
 
     </table>
 </main>

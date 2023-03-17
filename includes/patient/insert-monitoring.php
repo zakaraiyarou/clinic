@@ -31,7 +31,7 @@ if(isset($_POST['submit']))
             mysqli_begin_transaction($con);
     
             //Creating a table
-            $sql2 = "INSERT INTO patient_monitoring (registration_id, blood_pressure, heart_rate, temperature, reason, prescription_advice, created_at) VALUES ('$registrationID', '$bloodPressure', '$heartRate','$temperature', '$reason', '$prescriptionAdvice', now())";
+            $sql2 = "INSERT INTO clinic_patient_monitoring (registration_id, blood_pressure, heart_rate, temperature, reason, prescription_advice, created_at) VALUES ('$registrationID', '$bloodPressure', '$heartRate','$temperature', '$reason', '$prescriptionAdvice', now())";
             
             mysqli_query($con, $sql2);
     

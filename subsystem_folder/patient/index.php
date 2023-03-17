@@ -287,19 +287,17 @@
             <span>Medical</span>
         </a>
         </li>
-
         <li class="nav-item">
-        <a class="nav-link collapsed" href="../inventory/inventory.php">
-        <i class="fa-solid fa-warehouse"></i>
-            <span>Inventory</span>
-        </a>
+          <a class="nav-link collapsed" href="../requisition/requisition.php">
+            <i class="fa-solid fa-warehouse"></i>
+            <span>Requisition</span>
+          </a>
         </li>
-
         <li class="nav-item">
-        <a class="nav-link collapsed" href="../reports/reports.php">
-        <i class="fa-sharp fa-regular fa-file-chart-column"></i>
+          <a class="nav-link collapsed" href="../inventory/inventory.php">
+            <i class="fa-solid fa-warehouse"></i>
             <span>Reports</span>
-        </a>
+          </a>
         </li>
     </ul>
 

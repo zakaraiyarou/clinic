@@ -290,17 +290,17 @@
         </li>
 
         <li class="nav-item">
-        <a class="nav-link collapsed" href="../inventory/inventory.php">
-        <i class="fa-solid fa-warehouse"></i>
-            <span>Inventory</span>
-        </a>
+          <a class="nav-link collapsed" href="../requisition/requisition.php">
+            <i class="fa-solid fa-warehouse"></i>
+            <span>Requisition</span>
+          </a>
         </li>
-
+        
         <li class="nav-item">
-        <a class="nav-link collapsed" href="../reports/reports.php">
-        <i class="fa-sharp fa-regular fa-file-chart-column"></i>
+          <a class="nav-link collapsed" href="../inventory/inventory.php">
+            <i class="fa-solid fa-warehouse"></i>
             <span>Reports</span>
-        </a>
+          </a>
         </li>
     </ul>
 
@@ -331,7 +331,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <?php $query = "SELECT * FROM appointment_table";
+                      <?php $query = "SELECT * FROM clinic_appointment_table";
                                   $query_run = mysqli_query($con, $query);
 
                                   if (mysqli_num_rows($query_run) > 0)

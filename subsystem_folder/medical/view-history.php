@@ -334,7 +334,7 @@
                       <?php 
                       $registrationID = $_GET['view'];
 
-                      $query = "SELECT * FROM patient_monitoring WHERE registration_id = $registrationID";
+                      $query = "SELECT * FROM clinic_patient_monitoring WHERE registration_id = $registrationID";
                                   $query_run = mysqli_query($con, $query);
 
                                   if (mysqli_num_rows($query_run) > 0)
