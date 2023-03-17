@@ -66,7 +66,8 @@ include './database/connection.php';
                     <p class="text-center small">Enter your username & password to login</p>
                   </div>
 
-                  <form class="row g-3 needs-validation" name="f1" action="./includes/login.php" onsubmit="return validation()" method="POST">
+                  <form class="row g-3 needs-validation" name="f1" action="./database/authentication.php" onsubmit="return validation()" method="POST">
+
                     <div class="col-12">
                       <label for="user" class="form-label">Username</label>
                       <div class="input-group has-validation">

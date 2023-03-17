@@ -8,7 +8,6 @@
   <meta content="" name="description">
   <meta content="" name="keywords">
 
-
   <!-- Favicons -->
   <link href="../assets/img/favicon.png" rel="icon">
   <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -38,10 +37,8 @@
   ======================================================== -->
 
   <!-- HTML !-->
-  <title>Clinic Management System</title>
 
 </head>
-<body>
 
 <header id="header" class="header fixed-top d-flex align-items-center">
 
@@ -166,7 +163,7 @@
 
               <li class="message-item">
                 <a href="#">
-                  <img src="../assets/img/messages-1.jpg" alt="" class="rounded-circle">
+                  <img src="../../assets/img/messages-1.jpg" alt="" class="rounded-circle">
                   <div>
                     <h4>Maria Hudson</h4>
                     <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -180,7 +177,7 @@
 
               <li class="message-item">
                 <a href="#">
-                  <img src="../assets/img/messages-2.jpg" alt="" class="rounded-circle">
+                  <img src="../../assets/img/messages-2.jpg" alt="" class="rounded-circle">
                   <div>
                     <h4>Anna Nelson</h4>
                     <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -194,7 +191,7 @@
 
               <li class="message-item">
                 <a href="#">
-                  <img src="../assets/img/messages-3.jpg" alt="" class="rounded-circle">
+                  <img src="../../assets/img/messages-3.jpg" alt="" class="rounded-circle">
                   <div>
                     <h4>David Muldon</h4>
                     <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -217,7 +214,7 @@
           <li class="nav-item dropdown pe-3">
 
             <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-              <img src="../assets/img/apple-touch-icon.png" alt="Profile" class="rounded-circle">
+              <img src="../../assets/img/apple-touch-icon.png" alt="Profile" class="rounded-circle">
               <span class="d-none d-md-block dropdown-toggle ps-2">Admin</span>
             </a><!-- End Profile Iamge Icon -->
 
@@ -240,7 +237,7 @@
                 <hr class="dropdown-divider">
               </li>
               <li>
-                <a class="dropdown-item d-flex align-items-center" href="../database/logout.php">
+                <a class="dropdown-item d-flex align-items-center" href="../../database/logout.php">
                   <i class="bi bi-person"></i>
                   <span>Log out</span>
                 </a>
@@ -253,5 +250,84 @@
 
 
 </header>
+ <!-- ======= Sidebar ======= -->
+ <aside id="sidebar" class="sidebar">
+    <ul class="sidebar-nav" id="sidebar-nav">
 
-</nav><!-- End Icons Navigation -->
+        <li class="nav-item">
+        <a class="nav-link collapsed" href="dashboard.php"  style="color:blue;">
+            <i class="bi bi-grid"></i>
+            <span>Dashboard</span>
+        </a>
+        </li><!-- End Dashboard Nav -->
+
+        <li class="nav-item">
+        <a class="nav-link collapsed" href="patient-create.php">
+        <i class="bi bi-person"></i>
+            <span>Patient</span>
+        </a>
+    </li>
+
+        <li class="nav-item">
+        <a class="nav-link collapsed" href="../appointment.php">
+        <i class="fa-solid fa-calendar-check"></i>
+            <span>Appointment Management</span>
+        </a>
+        </li>
+
+        <li class="nav-item">
+        <a class="nav-link collapsed" href="medical.php ">
+        <i class="fa-solid fa-notes-medical"></i>
+            <span>Medical</span>
+        </a>
+        </li>
+
+        <li class="nav-item">
+        <a class="nav-link collapsed" href="inventory.php">
+        <i class="fa-solid fa-warehouse"></i>
+            <span>Inventory</span>
+        </a>
+        </li>
+
+        <li class="nav-item">
+        <a class="nav-link collapsed" href="reports.php">
+        <i class="fa-sharp fa-regular fa-file-chart-column"></i>
+            <span>Reports</span>
+        </a>
+        </li>
+    </ul>
+
+</aside><!-- End Sidebar-->
+<body>
+<main>
+    <table id="patientTable">
+
+    </table>
+</main>
+
+
+<!-- Vendor JS Files -->
+<script src="../assets/vendor/apexcharts/apexcharts.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/vendor/chart.js/chart.min.js"></script>
+<script src="../assets/vendor/echarts/echarts.min.js"></script>
+<script src="../assets/vendor/quill/quill.min.js"></script>
+<script src="../assets/vendor/simple-datatables/simple-datatables.js"></script>
+<script src="../assets/vendor/tinymce/tinymce.min.js"></script>
+<script src="../assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- DATA TABLES -->
+<script src="../assets/vendor/dataTables/jquery-3.5.1.js"></script>
+<script src="../assets/vendor/dataTables/jquery.dataTables.min.js"></script>
+<script src="../assets/vendor/dataTables/dataTables.bootstrap5.min.js"></script>
+
+  <!-- DATA TABLES -->
+  <script src="../assets/js/clinic.js"></script>
+
+<!-- Template Main JS File -->
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/apexchart.js"></script>
+
+
+</body>
+</html>

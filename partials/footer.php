@@ -10,10 +10,15 @@
   <script src="../assets/vendor/simple-datatables/simple-datatables.js"></script>
   <script src="../assets/vendor/tinymce/tinymce.min.js"></script>
   <script src="../assets/vendor/php-email-form/validate.js"></script>
+  
+    <!-- DATA TABLES -->
+  <script src="../assets/vendor/dataTables/jquery-3.5.1.js"></script>
+  <script src="../assets/vendor/dataTables/jquery.dataTables.min.js"></script>
+  <script src="../assets/vendor/dataTables/dataTables.bootstrap5.min.js"></script>
+
+    <!-- DATA TABLES -->
+    <script src="../assets/js/clinic.js"></script>
 
   <!-- Template Main JS File -->
   <script src="../assets/js/main.js"></script>
   <script src="../assets/js/apexchart.js"></script>
-
-  </body>
-</html>
