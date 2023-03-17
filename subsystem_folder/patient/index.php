@@ -345,10 +345,10 @@
                                               <td><?= $patient['phone']; ?></td>
                                               <td><?= $patient['gender']; ?></td>
                                               <td>
-                                                  <a href="patient-info.php?viewInfo=<?=$patient['student_number'];?>" type="button" class="btn btn-info">
+                                                  <a href="patient-info.php?viewInfo=<?=$patient['id'];?>" type="button" class="btn btn-info">
                                                     View
                                                   </a>
-                                                  <a href="manage-patient.php?manage=<?=$patient['student_number'];?>" type="button" class="btn btn-primary">
+                                                  <a href="manage-patient.php?manage=<?=$patient['id'];?>" type="button" class="btn btn-primary">
                                                     Manage
                                                   </a>
                                               </td>

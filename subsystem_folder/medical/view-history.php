@@ -321,18 +321,20 @@
                   <table id="patientTable" class="table table-borderless datatable">
                     <thead>
                       <tr>
-                          <th scope="col">Student ID</th>
-                          <th scope="col">Name</th>
-                          <th scope="col">Email</th>
-                          <th scope="col">Phone</th>
-                          <th scope="col">Gender</th>
-                          <th scope="col">Action</th>
+                          <th scope="col">Blood Pressure</th>
+                          <th scope="col">Heart Rate</th>
+                          <th scope="col">Temperature</th>
+                          <th scope="col">Reason</th>
+                          <th scope="col">Prescription / Advice</th>
+                          <th scope="col">Date</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <?php $query = "SELECT * FROM registration
-                                      INNER JOIN  patient_monitoring 
-                                      ON registration.student_number  = patient_monitoring.student_id";
+                      
+                      <?php 
+                      $registrationID = $_GET['view'];
+
+                      $query = "SELECT * FROM patient_monitoring WHERE registration_id = $registrationID";
                                   $query_run = mysqli_query($con, $query);
 
                                   if (mysqli_num_rows($query_run) > 0)
@@ -342,18 +344,13 @@
                                           ?>
                                           <tr>
                                               <td><?= $patient['blood_pressure']; ?></td>
-                                              <td><?= $patient['first_name'].''.$patient['last_name'] ?> </td>
-                                              <td><?= $patient['email']; ?></td>
-                                              <td><?= $patient['phone']; ?></td>
-                                              <td><?= $patient['gender']; ?></td>
-                                              <td>
-                                                  <a href="view-history.php?view=<?=$patient['student_number'];?>" type="button" class="btn btn-info">
-                                                    View History
-                                                  </a>
-                                              </td>
+                                              <td><?= $patient['heart_rate'] ?> </td>
+                                              <td><?= $patient['temperature']; ?></td>
+                                              <td><?= $patient['reason']; ?></td>
+                                              <td><?= $patient['prescription_advice']; ?></td>
+                                              <td><?= date('F m, Y', strtotime($patient['created_at'])) ?></td>
                                           </tr>
                                           <?php
-
                                       }
                                   }
                                   else

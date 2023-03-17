@@ -344,7 +344,7 @@
                                               <td><?= $patient['phone']; ?></td>
                                               <td><?= $patient['gender']; ?></td>
                                               <td>
-                                                  <a href="view-history.php?view=<?=$patient['student_number'];?>" type="button" class="btn btn-primary">
+                                                  <a href="view-history.php?view=<?=$patient['id'];?>" type="button" class="btn btn-primary">
                                                     View History
                                                   </a>
                                               </td>

@@ -307,10 +307,65 @@
 </aside><!-- End Sidebar-->
 
 <body>
-<main>
-    <table id="patientTable">
+<main id="main" class="main">
+
+<table id="appointmentTable">
+
+    <div class="col-12">
+              <div class="card">
+
+                <div class="card-header">
+                  <h5 class="card-title">Appointment List</h5>
+                </div>
+                <div class="card-body">
+
+                  <table id="appointmentTable" class="table table-borderless datatable">
+                    <thead>
+                      <tr>
+                          <th scope="col">Appointment No.</th>
+                          <th scope="col">Student No.</th>
+                          <th scope="col">Name</th>
+                          <th scope="col">Phone</th>
+                          <th scope="col">Section/Department</th>
+                          <th scope="col">Appointment Date</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <?php $query = "SELECT * FROM appointment_table";
+                                  $query_run = mysqli_query($con, $query);
+
+                                  if (mysqli_num_rows($query_run) > 0)
+                                  {
+                                      foreach($query_run as $patient)
+                                      {
+                                          ?>
+                                          <tr>
+                                              <td><?= $patient['appointment_id']; ?></td>
+                                              <td><?= $patient['student_number']; ?></td>
+                                              <td><?= $patient['name']; ?></td>
+                                              <td><?= $patient['contact_no']; ?></td>
+                                              <td><?= $patient['section_department']; ?></td>
+                                              <td><?= date('F d Y',strtotime($patient['appointment_date'])) ?></td>
+                                          </tr>
+                                          <?php
+
+                                      }
+                                  }
+                                  else
+                                  {
+                                      echo "<h5>No Record Found!</h5>";
+                                  }
+                              ?>
+                    </tbody>
+                  </table>
+
+                </div>
+
+              </div>
+          </div>
 
     </table>
+
 </main>
 
 

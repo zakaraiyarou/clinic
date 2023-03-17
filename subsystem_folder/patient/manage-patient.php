@@ -5,7 +5,7 @@
 
   if(isset($_GET['manage']))
   {
-    $studentNumber = $_GET['manage'];
+    $registrationID = $_GET['manage'];
   }
 ?>
 
@@ -319,8 +319,8 @@
     <div class="card-body">
       <form action="../../includes/patient/insert-monitoring.php" class="pt-3" method="POST">
         <div class="d-flex gap-2">
-          <?php if($studentNumber): ?>
-          <input type="hidden" name="studentNumber" class="form-control" value="<?= $studentNumber ?>"></textarea>
+          <?php if($registrationID): ?>
+          <input type="hidden" name="registrationID" class="form-control" value="<?= $registrationID ?>"></textarea>
           <?php endif; ?>
           <div class="mb-3 col">
               <label for="col" class="form-label">Blood Pressure</label>
