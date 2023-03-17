@@ -311,10 +311,12 @@
     <table id="patientTable">
 
     <div class="col-12">
-              <div class="card recent-sales overflow-auto">
+              <div class="card">
 
-                <div class="card-body">
+                <div class="card-header">
                   <h5 class="card-title">List of Patients</h5>
+                </div>
+                <div class="card-body">
 
                   <table id="patientTable" class="table table-borderless datatable">
                     <thead>
