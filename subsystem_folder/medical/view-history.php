@@ -2,6 +2,7 @@
   session_start();
 
   require_once '../../database/connection.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -169,7 +170,7 @@
 
               <li class="message-item">
                 <a href="#">
-                  <img src="../../assets/img/messages-1.jpg" alt="" class="rounded-circle">
+                  <img src="../../../assets/img/messages-1.jpg" alt="" class="rounded-circle">
                   <div>
                     <h4>Maria Hudson</h4>
                     <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -183,7 +184,7 @@
 
               <li class="message-item">
                 <a href="#">
-                  <img src="../../assets/img/messages-2.jpg" alt="" class="rounded-circle">
+                  <img src="../../../assets/img/messages-2.jpg" alt="" class="rounded-circle">
                   <div>
                     <h4>Anna Nelson</h4>
                     <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -197,7 +198,7 @@
 
               <li class="message-item">
                 <a href="#">
-                  <img src="../../assets/img/messages-3.jpg" alt="" class="rounded-circle">
+                  <img src="../../../assets/img/messages-3.jpg" alt="" class="rounded-circle">
                   <div>
                     <h4>David Muldon</h4>
                     <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -220,7 +221,7 @@
           <li class="nav-item dropdown pe-3">
 
             <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-              <img src="../../assets/img/apple-touch-icon.png" alt="Profile" class="rounded-circle">
+              <img src="../../../assets/img/apple-touch-icon.png" alt="Profile" class="rounded-circle">
               <span class="d-none d-md-block dropdown-toggle ps-2">Admin</span>
             </a><!-- End Profile Iamge Icon -->
 
@@ -256,8 +257,8 @@
 
 
 </header>
- <!-- ======= Sidebar ======= -->
- <aside id="sidebar" class="sidebar">
+<!-- ======= Sidebar ======= -->
+<aside id="sidebar" class="sidebar">
     <ul class="sidebar-nav" id="sidebar-nav">
 
         <li class="nav-item">
@@ -268,7 +269,7 @@
         </li><!-- End Dashboard Nav -->
 
         <li class="nav-item">
-        <a class="nav-link collapsed" href="index.php"  style="color:blue;">
+        <a class="nav-link collapsed" href="../patient/index.php">
         <i class="bi bi-person"></i>
             <span>Patient</span>
         </a>
@@ -282,7 +283,7 @@
         </li>
 
         <li class="nav-item">
-        <a class="nav-link collapsed" href="../medical/medical.php ">
+        <a class="nav-link collapsed" href="medical.php" style="color:blue;">
         <i class="fa-solid fa-notes-medical"></i>
             <span>Medical</span>
         </a>
@@ -305,18 +306,17 @@
 
 </aside><!-- End Sidebar-->
 <body>
+
 <main id="main" class="main">
 
 
     <table id="patientTable">
 
     <div class="col-12">
-              <div class="card">
+              <div class="card recent-sales overflow-auto">
 
-                <div class="card-header">
-                  <h5 class="card-title">List of Patients</h5>
-                </div>
                 <div class="card-body">
+                  <h5 class="card-title">List of Patients</h5>
 
                   <table id="patientTable" class="table table-borderless datatable">
                     <thead>
@@ -330,7 +330,9 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <?php $query = "SELECT * FROM registration";
+                      <?php $query = "SELECT * FROM registration
+                                      INNER JOIN  patient_monitoring 
+                                      ON registration.student_number  = patient_monitoring.student_id";
                                   $query_run = mysqli_query($con, $query);
 
                                   if (mysqli_num_rows($query_run) > 0)
@@ -339,17 +341,14 @@
                                       {
                                           ?>
                                           <tr>
-                                              <td><?= $patient['student_number']; ?></td>
+                                              <td><?= $patient['blood_pressure']; ?></td>
                                               <td><?= $patient['first_name'].''.$patient['last_name'] ?> </td>
                                               <td><?= $patient['email']; ?></td>
                                               <td><?= $patient['phone']; ?></td>
                                               <td><?= $patient['gender']; ?></td>
                                               <td>
-                                                  <a href="patient-info.php?viewInfo=<?=$patient['student_number'];?>" type="button" class="btn btn-info">
-                                                    View
-                                                  </a>
-                                                  <a href="manage-patient.php?manage=<?=$patient['student_number'];?>" type="button" class="btn btn-primary">
-                                                    Manage
+                                                  <a href="view-history.php?view=<?=$patient['student_number'];?>" type="button" class="btn btn-info">
+                                                    View History
                                                   </a>
                                               </td>
                                           </tr>
@@ -396,28 +395,6 @@
 <script src="../../assets/js/main.js"></script>
 <script src="../../assets/js/apexchart.js"></script>
 
-<!-- Sweet Alert -->
-<script src="../../assets/js/sweetalert.min.js"></script>
-
-
-<!-- SWEET ALERT -->
-<?php
-    if(isset($_SESSION['status']) && $_SESSION['status'] !='' )
-    {
-      ?>
-      <script>swal({
-        title: "<?php echo $_SESSION['status'];?>",
-        // text: "Patient registered successfully!",
-        icon: "<?php echo $_SESSION['status_code']; ?>",
-        button: "Done",
-      });</script>
-    <?php
-      unset($_SESSION['status']);
-    }
-  ?>
-
 
 </body>
 </html>
-
-

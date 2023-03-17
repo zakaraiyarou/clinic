@@ -1,3 +1,9 @@
+<?php
+  session_start();
+
+  require_once '../../database/connection.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   
@@ -299,8 +305,66 @@
 
 </aside><!-- End Sidebar-->
 <body>
-<main>
+
+<main id="main" class="main">
+
+
     <table id="patientTable">
+
+    <div class="col-12">
+              <div class="card recent-sales overflow-auto">
+
+                <div class="card-body">
+                  <h5 class="card-title">Patient History</h5>
+
+                  <table id="patientTable" class="table table-borderless datatable">
+                    <thead>
+                      <tr>
+                          <th scope="col">Student ID</th>
+                          <th scope="col">Name</th>
+                          <th scope="col">Email</th>
+                          <th scope="col">Phone</th>
+                          <th scope="col">Gender</th>
+                          <th scope="col">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <?php $query = "SELECT * FROM registration";
+                                  $query_run = mysqli_query($con, $query);
+
+                                  if (mysqli_num_rows($query_run) > 0)
+                                  {
+                                      foreach($query_run as $patient)
+                                      {
+                                          ?>
+                                          <tr>
+                                              <td><?= $patient['student_number']; ?></td>
+                                              <td><?= $patient['first_name'].''.$patient['last_name'] ?> </td>
+                                              <td><?= $patient['email']; ?></td>
+                                              <td><?= $patient['phone']; ?></td>
+                                              <td><?= $patient['gender']; ?></td>
+                                              <td>
+                                                  <a href="view-history.php?view=<?=$patient['student_number'];?>" type="button" class="btn btn-primary">
+                                                    View History
+                                                  </a>
+                                              </td>
+                                          </tr>
+                                          <?php
+
+                                      }
+                                  }
+                                  else
+                                  {
+                                      echo "<h5>No Record Found!</h5>";
+                                  }
+                              ?>
+                    </tbody>
+                  </table>
+
+                </div>
+
+              </div>
+          </div>
 
     </table>
 </main>

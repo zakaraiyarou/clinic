@@ -268,7 +268,7 @@
         </li><!-- End Dashboard Nav -->
 
         <li class="nav-item">
-        <a class="nav-link collapsed" href="index.php"  style="color:blue;">
+        <a class="nav-link collapsed" href="../patient/index.php">
         <i class="bi bi-person"></i>
             <span>Patient</span>
         </a>
@@ -282,7 +282,7 @@
         </li>
 
         <li class="nav-item">
-        <a class="nav-link collapsed" href="../medical/medical.php ">
+        <a class="nav-link collapsed" href="../medical/medical.php">
         <i class="fa-solid fa-notes-medical"></i>
             <span>Medical</span>
         </a>
@@ -307,70 +307,135 @@
 <body>
 <main id="main" class="main">
 
+    <?php
+        $student_number = $_GET['viewInfo'];
+        $query = "SELECT * FROM registration WHERE student_number = $student_number";
 
-    <table id="patientTable">
+        $query_run = mysqli_query($con, $query);
 
-    <div class="col-12">
-              <div class="card">
-
-                <div class="card-header">
-                  <h5 class="card-title">List of Patients</h5>
+        if (mysqli_num_rows($query_run) > 0 )
+        {
+            foreach($query_run as $patient) 
+            {
+            ?>
+                <div class="card">
+                    <div class="card-body pt-4">
+                        <h5>Personal Information</h5>
+                        <hr class="text-divider">
+                       <div class="row">
+                            <p class="col-md-2">Firstname:</p>
+                            <div class="col">
+                                <p>
+                                    <?php echo $patient['first_name'] ?>
+                                </p>
+                            </div>
+                       </div>
+                       <div class="row">
+                            <p class="col-md-2">Middlename:</p>
+                            <div class="col">
+                                <p>
+                                    <?php echo $patient['middle_name'] ?>
+                                </p>
+                            </div>
+                       </div>
+                       <div class="row">
+                            <p class="col-md-2">Lastname:</p>
+                            <div class="col">
+                                <p>
+                                    <?php echo $patient['last_name'] ?>
+                                </p>
+                            </div>
+                       </div>
+                       <div class="row">
+                            <p class="col-md-2">Suffix:</p>
+                            <div class="col">
+                                <p>
+                                    <?php $patient['suffix']  ?>
+                                </p>
+                            </div>
+                       </div>
+                       <div class="row">
+                            <p class="col-md-2">Email:</p>
+                            <div class="col">
+                                <p>
+                                    <?php echo $patient['email'] ?>
+                                </p>
+                            </div>
+                       </div>
+                       <div class="row">
+                            <p class="col-md-2">Phone:</p>
+                            <div class="col">
+                                <p>
+                                    <?php echo $patient['phone'] ?>
+                                </p>
+                            </div>
+                       </div>
+                       <div class="row">
+                            <p class="col-md-2">Birthdate:</p>
+                            <div class="col">
+                                <p>
+                                    <?php echo $patient['birth_date'] ?>
+                                </p>
+                            </div>
+                       </div>
+                       <div class="row">
+                            <p class="col-md-2">Gender:</p>
+                            <div class="col">
+                                <p>
+                                    <?php echo $patient['gender'] ?>
+                                </p>
+                            </div>
+                       </div>
+                       <h5>Student Information</h5>
+                        <hr class="text-divider">
+                        <div class="row">
+                            <p class="col-md-2">Student Number:</p>
+                            <div class="col">
+                                <p>
+                                    <?php echo $patient['student_number'] ?>
+                                </p>
+                            </div>
+                       </div>
+                       <div class="row">
+                            <p class="col-md-2">Course:</p>
+                            <div class="col">
+                                <p>
+                                    <?php echo $patient['course_taken'] ?>
+                                </p>
+                            </div>
+                       </div>
+                       <div class="row">
+                            <p class="col-md-2">Year Level:</p>
+                            <div class="col">
+                                <p>
+                                    <?php echo $patient['year_level'] ?>
+                                </p>
+                            </div>
+                       </div>
+                       <div class="row">
+                            <p class="col-md-2">Section:</p>
+                            <div class="col">
+                                <p>
+                                    <?php echo $patient['section'] ?>
+                                </p>
+                            </div>
+                       </div>
+                       <div class="row">
+                            <p class="col-md-2">Status:</p>
+                            <div class="col">
+                                <p>
+                                    <?php echo $patient['status'] ?>
+                                </p>
+                            </div>
+                       </div>
+                    </div>
                 </div>
-                <div class="card-body">
+            <?php
+            }     
+         } 
+    ?>
 
-                  <table id="patientTable" class="table table-borderless datatable">
-                    <thead>
-                      <tr>
-                          <th scope="col">Student ID</th>
-                          <th scope="col">Name</th>
-                          <th scope="col">Email</th>
-                          <th scope="col">Phone</th>
-                          <th scope="col">Gender</th>
-                          <th scope="col">Action</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <?php $query = "SELECT * FROM registration";
-                                  $query_run = mysqli_query($con, $query);
 
-                                  if (mysqli_num_rows($query_run) > 0)
-                                  {
-                                      foreach($query_run as $patient)
-                                      {
-                                          ?>
-                                          <tr>
-                                              <td><?= $patient['student_number']; ?></td>
-                                              <td><?= $patient['first_name'].''.$patient['last_name'] ?> </td>
-                                              <td><?= $patient['email']; ?></td>
-                                              <td><?= $patient['phone']; ?></td>
-                                              <td><?= $patient['gender']; ?></td>
-                                              <td>
-                                                  <a href="patient-info.php?viewInfo=<?=$patient['student_number'];?>" type="button" class="btn btn-info">
-                                                    View
-                                                  </a>
-                                                  <a href="manage-patient.php?manage=<?=$patient['student_number'];?>" type="button" class="btn btn-primary">
-                                                    Manage
-                                                  </a>
-                                              </td>
-                                          </tr>
-                                          <?php
-
-                                      }
-                                  }
-                                  else
-                                  {
-                                      echo "<h5>No Record Found!</h5>";
-                                  }
-                              ?>
-                    </tbody>
-                  </table>
-
-                </div>
-
-              </div>
-          </div>
-
-    </table>
 </main>
 
 
