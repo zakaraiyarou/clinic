@@ -306,8 +306,51 @@
 </aside><!-- End Sidebar-->
 <body>
 <main id="main" class="main">
+  <div class="card">
+    <div class="card-header">
+      <h5>Create patient monitoring</h5>
+    </div>
 
-<h1>Pogi Ko</h1>
+    <div class="card-body">
+      <form action="../../includes/patient/insert-monitoring.php" class="pt-3" method="POST">
+        <div class="d-flex gap-2">
+          <div class="mb-3 col">
+              <label for="col" class="form-label">Blood Pressure</label>
+              <div class="">
+                <input type="text" name="" class="form-control"></textarea>
+              </div>
+          </div>
+          <div class="mb-3 col">
+              <label for="col" class="form-label">Heart Rate</label>
+              <div class="">
+                <input type="text" name="heartRate"class="form-control"></textarea>
+              </div>
+          </div>
+          <div class="mb-3 col">
+          <label for="col" class="form-label">Temperature</label>
+              <div class="">
+                <input type="text" name="temperature"class="form-control"></textarea>
+              </div>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="col" class="form-label">Reason</label>
+          <div class="col">
+            <textarea name="reason" id="" rows="3" class="form-control"></textarea>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="col" class="form-label">Prescription / Advice</label>
+          <div class="col">
+            <textarea name="prescription_advice" id="" rows="3" class="form-control"></textarea>
+          </div>
+        </div>
+        <div class="mb-3">
+          <button class="btn btn-primary" name="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
 </main>
 
 

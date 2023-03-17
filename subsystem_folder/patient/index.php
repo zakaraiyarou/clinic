@@ -319,18 +319,16 @@
                   <table id="patientTable" class="table table-borderless datatable">
                     <thead>
                       <tr>
-                          <th scope="col">Patient ID</th>
+                          <th scope="col">Student ID</th>
                           <th scope="col">Name</th>
+                          <th scope="col">Email</th>
+                          <th scope="col">Phone</th>
                           <th scope="col">Gender</th>
-                          <th scope="col">Age</th>
-                          <th scope="col">Paient Type</th>
-                          <th scope="col">Address</th>
-                          <th scope="col">Contact</th>
                           <th scope="col">Action</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <?php $query = "SELECT * FROM patient_lists";
+                      <?php $query = "SELECT * FROM registration";
                                   $query_run = mysqli_query($con, $query);
 
                                   if (mysqli_num_rows($query_run) > 0)
@@ -339,18 +337,16 @@
                                       {
                                           ?>
                                           <tr>
-                                              <td><?= $patient['patient_id']; ?></td>
-                                              <td><?= $patient['name'] ?> </td>
+                                              <td><?= $patient['student_number']; ?></td>
+                                              <td><?= $patient['first_name'].''.$patient['last_name'] ?> </td>
+                                              <td><?= $patient['email']; ?></td>
+                                              <td><?= $patient['phone']; ?></td>
                                               <td><?= $patient['gender']; ?></td>
-                                              <td><?= $patient['age']; ?></td>
-                                              <td><?= $patient['patient_type']; ?></td>
-                                              <td><?= $patient['address']; ?></td>
-                                              <td><?= $patient['contact']; ?></td>
                                               <td>
-                                                  <a href="view-patient.php?view=<?=$patient['patient_id'];?>" type="button" class="btn btn-info">
+                                                  <a href="view-patient.php?view=<?=$patient['student_number'];?>" type="button" class="btn btn-info">
                                                     View
                                                   </a>
-                                                  <a href="manage-patient.php?manage=<?=$patient['patient_id'];?>" type="button" class="btn btn-primary">
+                                                  <a href="manage-patient.php?manage=<?=$patient['student_number'];?>" type="button" class="btn btn-primary">
                                                     Manage
                                                   </a>
                                               </td>
